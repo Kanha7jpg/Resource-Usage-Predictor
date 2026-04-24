@@ -1,0 +1,40 @@
+# Environments
+venv/
+env/
+.env/
+.venv/
+
+# Datasets and Data Files (to avoid pushing large data to GitHub)
+*.csv
+*.tar.gz
+*.gz
+*.zip
+data/
+container_usage.csv
+
+# Machine Learning Model Artifacts
+*.pkl
+*.pt
+*.pth
+*.h5
+*.keras
+models/
+checkpoints/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# IDE / Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
