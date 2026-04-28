@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-04-28T20:34:44.571085",
+  "input_summary": {
+    "current_cpu": 35.0,
+    "current_memory": 49.5,
+    "num_timesteps": 10
+  },
+  "predictions": {
+    "lstm": {
+      "cpu": 13.929308891296387,
+      "memory": 77.47283935546875
+    },
+    "baseline": {
+      "cpu": 23.129999999999992,
+      "memory": 78.03333333333333
+    },
+    "ensemble": {
+      "cpu": 18.52965444564819,
+      "memory": 77.75308634440104,
+      "cpu_std": 4.600345554351803,
+      "memory_std": 0.2802469889322907
+    }
+  }
+}
