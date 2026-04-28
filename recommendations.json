@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-28T20:47:39.851483",
+  "scaling_decision": {
+    "action": "maintain",
+    "current_cpu_predicted": 16.08,
+    "current_memory_predicted": 73.8,
+    "cpu_utilization_level": "idle",
+    "memory_utilization_level": "high",
+    "reason": "Usage within acceptable range",
+    "recommendation": {
+      "cpu_request_millicores": 372,
+      "cpu_limit_millicores": 621,
+      "memory_request_mi": 545,
+      "memory_limit_mi": 909
+    },
+    "confidence_score": 0.97
+  },
+  "kubernetes_spec": "resources:\n  requests:\n    cpu: 372m\n    memory: 545Mi\n  limits:\n    cpu: 621m\n    memory: 909Mi",
+  "scaling_plan": {
+    "scaling_action": "maintain",
+    "current_resources": {
+      "cpu_millicores": 500,
+      "memory_mi": 256
+    },
+    "recommended_resources": {
+      "cpu_request_millicores": 372,
+      "cpu_limit_millicores": 621,
+      "memory_request_mi": 545,
+      "memory_limit_mi": 909
+    },
+    "changes": {
+      "cpu_millicores_change": -128,
+      "cpu_percent_change": -25.6,
+      "memory_mi_change": 289,
+      "memory_percent_change": 112.89
+    },
+    "reason": "Usage within acceptable range",
+    "confidence_score": 0.9699721749623617
+  }
+}
