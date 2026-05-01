@@ -1,0 +1,37 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    privileged: true
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PROMETHEUS_URL=http://prometheus:9090
+      - CONTAINERS_SELECTOR=pod!=""
+      - QUERY_INTERVAL_SECONDS=60
+    depends_on:
+      - prometheus
+      - cadvisor
+
+volumes:
+  prometheus_data:
